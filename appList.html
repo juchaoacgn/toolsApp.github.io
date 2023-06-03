@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>次元动漫社开发工具箱</title>
+		<!--必要样式-->
+		<link rel="stylesheet" type="text/css" href="css/leftstyle.css" />
+		<!-- 本页面样式 -->
+		<link rel="stylesheet" type="text/css" href="css/appList.css" />
+
+	</head>
+	<body>
+		<!-- 左侧导航栏 -->
+		<nav id="menu" class="menu">
+			<section class="menu-section">
+				<!-- <div id="top_logo"><img class="img" src="img/sh.png"/></div> -->
+				<div><img src="img/logoWhite.png" alt="logo" class="logo_White" url="page/about/about.html" onclick="step(this)"></div>
+				<h3 class="menu-section-title">功能目录</h3>
+				<br/>
+				<hr/>
+				<ul class="menu-section-list">
+					<li url="page/Calendar/Calendar.html" onclick="step(this)"><a>日历</a></li>
+					<li url="page/Edit/Edit.html" onclick="step(this)"><a>文本编辑器</a></li>
+					<li url="page/AutoCode/AutoCode.html" onclick="step(this)"><a>代码生成器</a></li>
+					<li url="#" onclick="step(this)"><a>网页IDE</a></li>
+					<li url="#" onclick="step(this)"><a>数据库设计</a></li>
+					<li url="#" onclick="step(this)"><a>加密计算</a></li>
+					<li url="#" onclick="step(this)"><a>简易office</a></li>
+					<li url="#" onclick="step(this)"><a>图片转base64</a></li>
+				</ul>
+			</section>
+		</nav>
+		
+		<!-- 主体部分 -->
+		<main id="main" class="panel">
+			<!-- 标题部分 -->
+			<div class="main_head">
+				<button class="btn-hamburger js-slideout-toggle">
+				  <img src="img/icon.svg" class="main_head_img" >
+				</button>
+				<div class="main_head_right_up">
+					<span>2023 &copy; 次元动漫社</span>
+				</div>
+				<div style="clear: both;"></div><!--去除浮动-->
+				<!-- 顶部导航栏 -->
+				<div class="main_head_right_down">
+					<span id="music" data-type="base">音乐</span>
+					<span id="video">视频</span>
+					<span id="other">其他</span>
+					<button data-type="base">基础</button>
+				</div>
+			</div>
+			
+			<!-- 主体部分 -->
+			<div class="main_body">
+				<!-- 显示主题内容 -->
+				<iframe src="page/main/mainIndex.html" frameborder="0" id="main_body_iframe" width="100%"></iframe>
+				<!-- 视频弹窗 -->
+				<!-- <iframe src="page/main/mainIndex.html" frameborder="0" id="main_body_iframe" width="100%"></iframe> -->
+			</div>
+			
+			<!-- 页脚弹窗 -->
+			<div class="main_footer">			
+				<!-- 弹窗 -->
+				<div id="myModal" class="modal">
+				  <!-- 弹窗内容 -->
+					<div class="modal-content">
+					 <!-- <div class="modal-header">
+					    <h2>弹窗头部</h2>
+					  </div> -->
+					  <div class="modal-body">
+						<span class="close">&times;</span>
+					    <iframe src="" frameborder="0" id="iframe"></iframe>
+					  </div>
+					 <!-- <div class="modal-footer">
+					    <h3>弹窗底部</h3>
+					  </div> -->
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		
+		
+		<!-- 控制脚本 -->
+		<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+		<script type="text/javascript" src="js/slideout.min.js"></script>
+		<script type="text/javascript" src="js/websql.js"></script>
+		<script type="text/javascript" src="js/appList.js"></script>
+
+		<!-- 页脚弹窗 -->
+		<script type="text/javascript">
+			var slideout = new Slideout({
+				'panel': document.getElementById('main'),
+				'menu': document.getElementById('menu'),
+				'padding': 256,
+				'tolerance': 70
+			  });
+			
+			  document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
+				slideout.toggle();
+			  });
+			
+			  document.querySelector('.menu').addEventListener('click', function(eve) {
+				if (eve.target.nodeName === 'A') { slideout.close(); }
+			  });
+		</script>
+
+
+
+	</body>
+</html>

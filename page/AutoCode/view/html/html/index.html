@@ -1,0 +1,61 @@
+<link href="html.css" rel="stylesheet" type="text/css">
+<script src="../../../../../js/jquery-3.6.4.min.js"></script>
+<!-- <script src="../../../../../js/idenxDB.js"></script> -->
+<script src="html.js"></script>
+<script>
+    open_menu('.menu');
+</script>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul class="menu">
+        <li><a>菜单一</a>
+            <ul>
+            <li><a data-url="page/iframe.html">菜单一</a></li>
+            <li><a >菜单二</a></li>
+            <li><a href="#">菜单三</a></li>
+            <li><a href="#">菜单四</a></li>
+            <li><a href="#" class="more">菜单五</a>
+                <ul>
+                <li><a href="#" data-url="666">菜单一</a></li>
+                <li><a href="#">菜单二</a></li>
+                <li><a href="#">菜单三</a></li>
+                <li><a href="#">菜单四</a></li>
+                <li><a href="#" class="more">菜单五</a>
+                    <ul class="three">
+                    <li><a href="#">菜单一</a></li>
+                    <li><a href="#">菜单二</a></li>
+                    <li><a href="#">菜单三</a></li>
+                    <li><a href="#">菜单四</a></li>
+                    <li><a href="#" class="more">菜单五</a>
+                        <ul class="four">
+                        <li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单二</a></li>
+                        <li><a href="#">菜单三</a></li>
+                        <li><a href="#">菜单四</a></li>
+                        <li><a href="#" class="more">菜单五</a>
+                            <ul class="four">
+                            <li><a href="#">菜单一</a></li>
+                            <li><a href="#">菜单二</a></li>
+                            <li><a href="#">菜单三</a></li>
+                            <li><a href="#">菜单四</a></li>
+                            <li><a href="#">菜单五</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        </ul>
+    </nav>
+
+    <!--主体 -->
+    <main>
+        <!-- 展示具体实现样式 -->
+        <iframe src="iframe.html" name="son" id="fatherData" frameborder="0" data="0"></iframe>
+    </main>
+</body>

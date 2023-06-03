@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>次元动漫社开发工具箱</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body class="out">
+	<div id="light"></div>
+	<div id="wave"></div>
+	<div id="stage">
+  	<!-- <div id="hero"><img src="img/logoStart.png"></div> -->
+	  <div id="hero">
+		<div class="loading">
+			<img src="img/sh.png" style="width: 400px;">
+		</div>
+	  </div>
+	</div>
+	<!-- <div id="title">
+		<img src="img/title.png">
+	</div> -->
+	<div id="additional">
+		<!-- <img src="img/additional.png"> -->
+		<h1>进入程序</h1>
+	</div>
+
+	<div id="ringgroup">
+		<div class="ring"></div>
+		<div class="ring"></div>
+		<div class="ring"></div>
+		<div class="ring"></div>
+	</div>
+	<div id="core">
+		<!-- <img src="img/47.png"></div> -->
+	</div>
+
+	
+<script src="js/jquery-3.6.4.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	startdelay = 200;
+	coredelay = 300;
+	maindelay = 630;
+	setTimeout("$('#ringgroup').addClass('pass');$('#light').addClass('pass');$('#core').addClass('pass');",startdelay);
+	setTimeout("$('#light').addClass('passed');$('#wave').addClass('pass');",startdelay + coredelay);
+	setTimeout("$('body').removeClass('out').addClass('in')", startdelay + coredelay + maindelay);
+
+});
+</script>
+</body>
+</html>

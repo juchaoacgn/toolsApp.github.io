@@ -1,0 +1,16 @@
+
+ul,li{ list-style-type:none;} 
+.menu { height:35px; line-height:35px; font-size:15px; background-color:#f2f2f2; }
+.menu li { float:left; position:relative;} /*这一级是导航*/
+.menu li a { display:block; line-height:35px; text-decoration:none; padding:0px 20px; color:#333333;   }
+.menu li a:hover {  background:#EFEFEF; }
+.menu li a.more:after{content:" »";}
+.menu li ul { position:absolute; float:left; width:150px; border:1px solid #D2D2D2; display:none; background-color:#FFFfff; z-index:9999;} /*这是第二级菜单*/
+.menu li ul a { width:110px;text-decoration:none; color:#333333;}
+.menu li ul a:hover { background:#f2f2f2;}
+.menu li ul ul{ top:0;left:150px;} /*从第三级菜单开始,所有的子级菜单都相对偏移*/
+
+iframe{
+    width: 100%;
+    height: 92.35%;
+}

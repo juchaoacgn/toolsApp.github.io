@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="../../../styles/vs2015.min.css">  <!--引入默认代码样式，可换其他的./css/default.css--> 
+<script src="../../../../../js/jquery-3.6.4.min.js"></script>
+<script src="../../../highlight.min.js"></script>    <!--引入代码高亮js highlight.pack.js-->
+<script src="../../../highlightjs-line-numbers.min.js"></script><!--引入添加行号js highlight.pack.js-->
+<script src="../../../clipboard.min.js"></script>
+<script>
+   
+</script>   
+<!-- 先初始化样式,在使用个人自定义的样式覆盖 -->
+<link rel="stylesheet" href="../../code.css"> 
+<body>
+    <div class="left">
+        <div class="title">
+            <h3>调控组件部分</h3>
+        </div>
+        <div class="form">
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            调控组件
+            生成按钮
+        </div>
+    </div>
+    <div class="right">
+        <div class="title">
+            <h3>代码部分</h3>
+        </div>
+        <div class="codeDiv">
+            <!-- #cbddcb -->
+            <pre><code style="background-color: #f3f3f3;" id="codeText"></code></pre>         
+            <div class="copy btn" id="btn" data-clipboard-target="#codeText">复制</div>
+        </div>
+    </div>
+</body>
+<script>
+    //提供给页面使用的函数 点击不同菜单显示不同调控组件界面
+    function showControls(data){
+        console.log(data);
+    }
+    //获取父页面数据
+    function getFatherData(){
+        // console.log(top.window.document.getElementById("button").innerText);
+
+    }  
+
+
+    let  codeText =  $('pre code').text();
+    // 当代码区域有内容时候，格式化代码
+    if(codeText.length){
+        // 初始化并优化显示代码
+        hljs.initHighlightingOnLoad(); 
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad();
+        $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+        // 复制按钮的显示与隐藏
+        let codeDiv = $('.codeDiv');
+        let copy = $('.copy');
+        codeDiv.mouseenter(function(){
+            copy.addClass('copyActive');
+        });
+        codeDiv.mouseleave(function(){
+            document.getElementById("btn").innerText="复制";
+            copy.removeClass('copyActive');
+        });
+    }
+   
+
+    //复制内容
+     //初始化对象
+     var clipboard = new ClipboardJS('.btn');
+    // 成功
+    clipboard.on('success', function (e) {
+        //注销对象
+        e.clearSelection();
+        document.getElementById("btn").innerText="复制成功";
+    });
+    // 失败
+    clipboard.on('error', function (e) {
+        document.getElementById("btn").innerText="复制失败";
+    });
+</script>

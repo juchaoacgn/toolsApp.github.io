@@ -1,0 +1,59 @@
+
+/* for block of numbers */
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: left;
+    color: #8A2BE2;
+    border-right: 1px solid #777676;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+.hljs-ln td{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+}
+
+.left{
+    width: 49.5%;
+    float: left;
+    text-align: center;
+}
+.right{
+    width: 49.5%;
+    float: left;
+    text-align: center;
+    margin: auto;
+    
+}
+.codeDiv{
+    width: 600px;
+    height: auto;
+    position: relative;
+    margin-left: 2%;
+    width: 96%;
+}
+.copy{
+    position:absolute;
+    top: 2px;
+    right: 10px;
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 0 50% 0 50%;
+    padding: 4px 9px;
+    display: none;
+}
+.copy:hover{
+    color: #f3f2f2;
+    background-color: #616161;
+}
+.copyActive{
+    display: block;
+}
